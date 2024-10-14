@@ -8,10 +8,11 @@ public enum GlueTypeEnum {
     BEAN("BEAN", false, null, null),
     GLUE_GROOVY("GLUE(Java)", false, null, null),
     GLUE_SHELL("GLUE(Shell)", true, "bash", ".sh"),
-    GLUE_PYTHON("GLUE(Python)", true, "python", ".py"),
+    GLUE_PYTHON("GLUE(Python)", true, "/Users/jalen/IdeaProjects/xxl-job/xxl-job-executor-samples/xxl-job-python/venv/bin/python", ".py"),
     GLUE_PHP("GLUE(PHP)", true, "php", ".php"),
     GLUE_NODEJS("GLUE(Nodejs)", true, "node", ".js"),
-    GLUE_POWERSHELL("GLUE(PowerShell)", true, "powershell", ".ps1");
+    GLUE_POWERSHELL("GLUE(PowerShell)", true, "powershell", ".ps1"),
+    GLUE_PYTHON_SCRIPT("GLUE(PythonScript)", true, "/Users/jalen/IdeaProjects/xxl-job/xxl-job-executor-samples/xxl-job-python/venv/bin/python", ".py");
 
     private String desc;
     private boolean isScript;

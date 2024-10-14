@@ -56,12 +56,17 @@ public class ScriptJobHandler extends IJobHandler {
         String cmd = glueType.getCmd();
 
         // make script file
-        String scriptFileName = XxlJobFileAppender.getGlueSrcPath()
-                .concat(File.separator)
-                .concat(String.valueOf(jobId))
-                .concat("_")
-                .concat(String.valueOf(glueUpdatetime))
-                .concat(glueType.getSuffix());
+        String scriptFileName;
+        if (glueType.name().equals("GLUE_PYTHON_SCRIPT")){
+            scriptFileName = "/Users/jalen/IdeaProjects/xxl-job/xxl-job-executor-samples/xxl-job-python/job/backendjob.py";
+        }else {
+            scriptFileName = XxlJobFileAppender.getGlueSrcPath()
+                    .concat(File.separator)
+                    .concat(String.valueOf(jobId))
+                    .concat("_")
+                    .concat(String.valueOf(glueUpdatetime))
+                    .concat(glueType.getSuffix());
+        }
         File scriptFile = new File(scriptFileName);
         if (!scriptFile.exists()) {
             ScriptUtil.markScriptFile(scriptFileName, gluesource);
